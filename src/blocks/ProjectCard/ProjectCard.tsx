@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TData } from 'types/dataTypes'
+import { TData } from 'types/DataTypes'
 
 import './style.scss'
 
