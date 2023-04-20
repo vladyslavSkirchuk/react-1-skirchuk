@@ -1,33 +1,24 @@
 import React from 'react'
-
-import './style.scss'
+import ProjectCard from 'blocks/ProjectCard/ProjectCard'
+import ProjectForm from 'blocks/ProjectForm/ProjectForm'
 
 import { data } from './data'
 
-interface IProject {
-    id: number
-    name: string
-    description: string
-    imageUrl: string
-    contractTypeId?: number
-    contractSignedOn?: string
-    budget: number
-    isActive: boolean
-}
+import './style.scss'
 
 const ProjectPage = (): React.ReactElement => {
     return (
-        <div className='items--list'>
-            {data.map((item: IProject) => (
-                <div className='items--list-item'>
-                    <div>{item.id}</div>
-                    <div>{item.name}</div>
-                    <div>{item.description}</div>
-                    <img className='image' src={item.imageUrl} alt='bmwTop' />
-                    <div>{item.budget}</div>
-                    <div>{item.isActive}</div>
-                </div>
-            ))}
+        <div className='project--page'>
+            <div className='project--list'>
+                {data.map(project => (
+                    <span key={project.id}>
+                        <div className='project--list-item'>
+                            <ProjectCard data={project} />
+                        </div>
+                        <ProjectForm />
+                    </span>
+                ))}
+            </div>
         </div>
     )
 }

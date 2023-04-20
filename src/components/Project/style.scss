@@ -1,22 +1,28 @@
-.items--list {
+.project--page {
+    width: 100%;
+}
+
+.project--list {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
     &-item {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-direction: column;
-        text-align: center;
         margin: 5px;
         width: 300px;
-        height: 350px;
-        background: #0dd4af;
+        height: auto;
+        padding: 10px;
+        background: #a1a1a1;
 
-        .image {
-            width: 200px;
-            height: 150px;
+        > * {
             margin: 5px 0;
         }
     }
