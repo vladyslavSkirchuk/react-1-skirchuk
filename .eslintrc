@@ -10,7 +10,7 @@
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
     ],
-    "plugins": ["react", "@typescript-eslint"],
+    "plugins": ["react", "@typescript-eslint", "prettier"],
     "rules": {
         "quotes": ["warn", "single"],
         "prefer-const": "error",

@@ -1,12 +1,24 @@
-import ProjectPage from 'components/ProjectPage/ProjectPage'
+import HeaderNav from 'blocks/HeaderNav/HeaderNav'
+import HomePage from 'containers/HomePage/HomePage'
+import ProjectPage from 'containers/ProjectPage/ProjectPage'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
     return (
-        <div className='App'>
-            <div className='container'>
-                <ProjectPage />
-            </div>
-        </div>
+        <>
+            <Router>
+                <HeaderNav />
+                <div className='App'>
+                    <div className='inner-container'>
+                        <Routes>
+                            <Route path='/' element={<HomePage />} />
+                            <Route path='/projects' element={<ProjectPage />} />
+                        </Routes>
+                    </div>
+                </div>
+            </Router>
+        </>
     )
 }
 

@@ -1,0 +1,29 @@
+.project--page {
+    width: 100%;
+}
+
+.project--list {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin: 5px;
+        width: 300px;
+        height: auto;
+        padding: 10px;
+        background: #a1a1a1;
+
+        > * {
+            margin: 5px 0;
+        }
+    }
+}

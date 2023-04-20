@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 import { TData } from 'types/DataTypes'
 
-import { Project } from 'Project'
+import { Project } from './Project'
 
 const baseUrl = 'http://localhost:4000'
 const url = `${baseUrl}/projects`
@@ -12,7 +13,6 @@ function translateStatusToErrorMessage(status: number) {
         case 403:
             return 'You do not have permission to view the project(s).'
         default:
-            // eslint-disable-next-line max-len
             return 'There was an error retrieving the project(s). Please try again.'
     }
 }
@@ -57,7 +57,6 @@ const projectAPI = {
             .catch(error => {
                 console.log('log client error ' + error)
                 throw new Error(
-                    // eslint-disable-next-line max-len
                     'There was an error retrieving the projects. Please try again.',
                 )
             })
@@ -85,10 +84,7 @@ const projectAPI = {
             .then(parseJSON)
             .catch((error: TypeError) => {
                 console.log('log client error ' + error)
-                throw new Error(
-                    // eslint-disable-next-line max-len
-                    'There was an error updating the project. Please try again.',
-                )
+                throw new Error('Error, run server!')
             })
     },
 }
