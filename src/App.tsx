@@ -1,10 +1,10 @@
-import Project from 'components/Project/Project'
+import ProjectPage from 'components/Project/Project'
 
 function App() {
     return (
         <div className='App'>
             <div className='container'>
-                <Project />
+                <ProjectPage />
             </div>
         </div>
     )
