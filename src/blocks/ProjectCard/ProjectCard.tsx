@@ -1,37 +1,31 @@
 import React from 'react'
 
+import { TData } from 'types/dataTypes'
+
 import './style.scss'
 
-export interface IProjectData {
-    id: number
-    name: string
-    description: string
-    imageUrl: string
-    contractTypeId?: number
-    contractSignedOn?: string
-    budget: number
-    isActive: boolean
-}
-
 interface IData {
-    data: IProjectData
+    project: TData
+    onEdit: (edit: TData) => void
 }
 
 const ProjectCard = (data: IData): React.ReactElement => {
-    const project: IData = data
-    const handleEditClick = (projectBeingEdited: IProjectData) => {
-        console.log(projectBeingEdited)
+    const { project, onEdit } = data
+
+    const handleEditClick = (projectBeingEdited: TData) => {
+        onEdit(projectBeingEdited)
     }
+
     return (
         <>
-            <div className='name'>{project.data.name}</div>
-            <p className='desc'>{project.data.description}</p>
-            <img className='image' src={project.data.imageUrl} alt='bmwTop' />
-            <div>Budget : {project.data.budget}</div>
-            <div>{project.data.isActive}</div>
+            <div className='name'>{project.name}</div>
+            <p className='desc'>{project.description}</p>
+            <img className='image' src={project.imageUrl} alt='bmwTop' />
+            <div>Budget : {project.budget}</div>
+            <div>{project.isActive}</div>
             <button
                 onClick={() => {
-                    handleEditClick(project.data)
+                    handleEditClick(project)
                 }}
                 className='btn'
             >
