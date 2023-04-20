@@ -1,4 +1,4 @@
-import ProjectPage from 'components/Project/Project'
+import ProjectPage from 'components/ProjectPage/ProjectPage'
 
 function App() {
     return (
